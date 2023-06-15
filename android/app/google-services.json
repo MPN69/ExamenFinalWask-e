@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "160018509544",
+    "project_id": "game-store-9a13f",
+    "storage_bucket": "game-store-9a13f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160018509544:android:8fd4deddbf193dfd77235d",
+        "android_client_info": {
+          "package_name": "com.example.waske_final_exam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160018509544-h2gl98e3c5dl3kn7u1128v685o7da56n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7E71jOtJ4kVsMGZYjlbbe8kEBlIDh1_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160018509544-h2gl98e3c5dl3kn7u1128v685o7da56n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "160018509544-n0sbv8f2tbid7p1au5bfujphu6pjdp5f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.waskeFinalExam.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
