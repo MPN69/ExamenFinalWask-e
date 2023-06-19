@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waske_final_exam/firebase/services/gameService.dart';
+import 'package:examenfinalwask_e/firebase/services/gameService.dart';
 
 class AddGamePage extends StatefulWidget {
   const AddGamePage({Key? key}) : super(key: key);

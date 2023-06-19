@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waske_final_exam/firebase/services/saleService.dart';
+import 'package:examenfinalwask_e/firebase/services/saleService.dart';
 
 class EditSalePage extends StatefulWidget {
   final String fecha;

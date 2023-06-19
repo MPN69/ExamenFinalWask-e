@@ -5,11 +5,13 @@ import '../../widgets/bottomNavbarWidget.dart';
 class StoreViewPage extends StatelessWidget {
   final String storeName;
   final String storeImage;
+  final String storeLocation;
 
   const StoreViewPage({
     Key? key,
     required this.storeName,
     required this.storeImage,
+    required this.storeLocation,
   }) : super(key: key);
 
   @override

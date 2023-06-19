@@ -6,6 +6,7 @@ class EditStorePage extends StatefulWidget {
   final String uid;
   final String name;
   final String image;
+  final String location;
   final String id;
 
   const EditStorePage(
@@ -13,6 +14,7 @@ class EditStorePage extends StatefulWidget {
       required this.uid,
       required this.name,
       required this.image,
+      required this.location,
       required this.id})
       : super(key: key);
 
@@ -23,6 +25,7 @@ class EditStorePage extends StatefulWidget {
 class _EditStorePageState extends State<EditStorePage> {
   TextEditingController store_name_controller = TextEditingController();
   TextEditingController store_image_controller = TextEditingController();
+  TextEditingController store_location_controller = TextEditingController();
   TextEditingController store_id_controller = TextEditingController();
   String store_uid = "";
 
@@ -31,6 +34,7 @@ class _EditStorePageState extends State<EditStorePage> {
     super.initState();
     store_name_controller.text = widget.name;
     store_image_controller.text = widget.image;
+    store_location_controller.text = widget.location;
     store_id_controller.text = widget.id;
     store_uid = widget.uid;
   }
@@ -77,12 +81,19 @@ class _EditStorePageState extends State<EditStorePage> {
                 hintText: "Profile Picture",
               ),
             ),
+            TextField(
+              controller: store_location_controller,
+              decoration: const InputDecoration(
+                hintText: "Location",
+              ),
+            ),
             ElevatedButton(
               onPressed: () async {
                 await updateStore(
                   store_uid,
                   store_name_controller.text,
                   store_image_controller.text,
+                  store_location_controller.text,
                   store_id_controller.text,
                 ).then((_) {
                   store_name_controller.text = "";

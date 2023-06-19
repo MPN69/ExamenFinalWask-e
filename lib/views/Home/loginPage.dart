@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:waske_final_exam/views/Clients/addClientPage.dart';
-import 'package:waske_final_exam/widgets/loginButtonWidget.dart';
-import 'package:waske_final_exam/widgets/textFormfieldWidget.dart';
+import 'package:examenfinalwask_e/views/Clients/addClientPage.dart';
+import 'package:examenfinalwask_e/widgets/loginButtonWidget.dart';
+import 'package:examenfinalwask_e/widgets/textFormfieldWidget.dart';
 
 import '../../Google/services/googleSignIn.dart';
 import '../../firebase/services/authService.dart';
@@ -26,26 +26,15 @@ class LoginPage extends StatelessWidget {
         key: formKey,
         child: Container(
           padding: const EdgeInsets.all(20.0),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Colors.blueGrey.shade900,
-                Colors.lightBlue.shade600,
-                Colors.black,
-              ],
-            ),
-          ),
           child: Center(
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   const FaIcon(
-                    Icons.account_circle_outlined,
-                    color: Colors.white,
-                    size: 140,
+                    Icons.account_circle,
+                    color: Colors.grey,
+                    size: 180,
                   ),
                   const SizedBox(
                     height: 30,
@@ -82,7 +71,7 @@ class LoginPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AddClientPage(),
+                            builder: (context) => const AddClientPage(),
                           ),
                         );
                         // print('tonto ahahaahahahah');
@@ -91,12 +80,12 @@ class LoginPage extends StatelessWidget {
                         // Ocurrió un error durante el registro, puedes mostrar un mensaje de error al usuario.
                       }
                     },
-                    child: Text('Register'),
+                    child: const Text('Register'),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton.icon(
+                  /* ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                       primary: Colors.red,
                       onPrimary: Colors.white,
@@ -117,7 +106,7 @@ class LoginPage extends StatelessWidget {
                   GoogleButtonWidget(
                     imagePath: 'images/Google.png',
                     onTap: () => AuthService().signInWithGoogle(),
-                  ),
+                  ),*/
                 ],
               ),
             ),

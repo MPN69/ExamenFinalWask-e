@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waske_final_exam/firebase/services/saleService.dart';
+import 'package:examenfinalwask_e/firebase/services/saleService.dart';
 
 class AddSalePage extends StatefulWidget {
   const AddSalePage({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:waske_final_exam/firebase/services/clientServices.dart';
+import 'package:examenfinalwask_e/firebase/services/clientServices.dart';
 
 import 'gameService.dart';
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:waske_final_exam/views/Games/gameListPage.dart';
-import 'package:waske_final_exam/views/Home/userHomeScreen.dart';
-import 'package:waske_final_exam/views/Stores/storeListPage.dart';
+import 'package:examenfinalwask_e/views/Games/gameListPage.dart';
+import 'package:examenfinalwask_e/views/Home/userHomeScreen.dart';
+import 'package:examenfinalwask_e/views/Stores/storeListPage.dart';
 
 import '../views/Employees/employeeListPage.dart';
 

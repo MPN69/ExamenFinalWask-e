@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:waske_final_exam/views/Home/loginPage.dart';
-import 'package:waske_final_exam/widgets/bottomNavbarWidget.dart';
-import 'package:waske_final_exam/widgets/loadingWidget.dart';
+import 'package:examenfinalwask_e/views/Home/loginPage.dart';
+import 'package:examenfinalwask_e/widgets/bottomNavbarWidget.dart';
+import 'package:examenfinalwask_e/widgets/loadingWidget.dart';
 
 class InicialScreenSelector extends StatelessWidget {
   const InicialScreenSelector({Key? key}) : super(key: key);

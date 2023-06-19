@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:waske_final_exam/views/Games/gameListPage.dart';
-import 'package:waske_final_exam/views/Home/userHomeScreen.dart';
-import 'package:waske_final_exam/views/Providers/providerListPage.dart';
-import 'package:waske_final_exam/views/Sales/saleListPage.dart';
+import 'package:examenfinalwask_e/views/Games/gameListPage.dart';
+import 'package:examenfinalwask_e/views/Home/userHomeScreen.dart';
+import 'package:examenfinalwask_e/views/Providers/providerListPage.dart';
+import 'package:examenfinalwask_e/views/Sales/saleListPage.dart';
 
 import '../views/Clients/clientListPage.dart';
 import '../views/Employees/employeeListPage.dart';
@@ -22,13 +22,12 @@ class _BottomNavbarWidgetState extends State<BottomNavbarWidget> {
 
   final List<Widget> _pages = [
     const GameListPage(),
-    const SaleListPage(),
-    const UserHomeScreen(),
-    const ProviderListPage(),
-    const StoreListPage(),
     const ClientListPage(),
-    const EmployeeListPage(),
-
+    const StoreListPage(),
+    // const SaleListPage(),
+    const UserHomeScreen(),
+    // const ProviderListPage(),
+    // const EmployeeListPage(),
     //Aqui solo hay que acomodar las vistas uwu
   ];
 
@@ -60,20 +59,12 @@ class _BottomNavbarWidgetState extends State<BottomNavbarWidget> {
               text: 'Games',
             ),
             GButton(
-              icon: Icons.people_alt_outlined,
+              icon: LineIcons.usersCog,
               text: 'Clients',
             ),
             GButton(
-              icon: LineIcons.users,
-              text: 'Employees',
-            ),
-            GButton(
-              icon: LineIcons.user,
-              text: 'Provider',
-            ),
-            GButton(
-              icon: LineIcons.user,
-              text: 'Provider',
+              icon: LineIcons.store,
+              text: 'Stores',
             ),
             GButton(
               icon: LineIcons.user,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waske_final_exam/firebase/services/providerServices.dart';
+import 'package:examenfinalwask_e/firebase/services/providerServices.dart';
 
 class EditProviderPage extends StatefulWidget {
   final String idProvider;

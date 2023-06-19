@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:waske_final_exam/firebase/services/clientServices.dart';
+import 'package:examenfinalwask_e/firebase/services/clientServices.dart';
 
 class AuthService {
   signInWithGoogle() async {

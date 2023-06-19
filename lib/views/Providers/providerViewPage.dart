@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waske_final_exam/widgets/bottomNavbarWidget.dart';
+import 'package:examenfinalwask_e/widgets/bottomNavbarWidget.dart';
 
 class ProviderViewPage extends StatelessWidget {
   final String developer;

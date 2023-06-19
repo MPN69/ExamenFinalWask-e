@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:waske_final_exam/firebase/services/gameService.dart';
-import 'package:waske_final_exam/widgets/loadingWidget.dart';
+import 'package:examenfinalwask_e/firebase/services/gameService.dart';
+import 'package:examenfinalwask_e/widgets/loadingWidget.dart';
 
 class GetByNameTest extends StatefulWidget {
   const GetByNameTest({Key? key}) : super(key: key);

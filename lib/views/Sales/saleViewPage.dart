@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waske_final_exam/widgets/bottomNavbarWidget.dart';
+import 'package:examenfinalwask_e/widgets/bottomNavbarWidget.dart';
 
 class SaleViewPage extends StatelessWidget {
   final String precio;

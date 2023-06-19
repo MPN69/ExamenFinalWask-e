@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waske_final_exam/firebase/services/employeeServices.dart';
+import 'package:examenfinalwask_e/firebase/services/employeeServices.dart';
 
 class EditEmployeePage extends StatefulWidget {
   final String uid;

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:waske_final_exam/firebase/services/saleService.dart';
-import 'package:waske_final_exam/views/Sales/addSalePage.dart';
-import 'package:waske_final_exam/views/Sales/editSalePage.dart';
-import 'package:waske_final_exam/views/Sales/saleViewPage.dart';
-import 'package:waske_final_exam/widgets/loadingWidget.dart';
+import 'package:examenfinalwask_e/firebase/services/saleService.dart';
+import 'package:examenfinalwask_e/views/Sales/addSalePage.dart';
+import 'package:examenfinalwask_e/views/Sales/editSalePage.dart';
+import 'package:examenfinalwask_e/views/Sales/saleViewPage.dart';
+import 'package:examenfinalwask_e/widgets/loadingWidget.dart';
 
 import '../../widgets/gameCardWidget.dart';
 

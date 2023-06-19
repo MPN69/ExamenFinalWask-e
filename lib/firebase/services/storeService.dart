@@ -17,6 +17,7 @@ Future<List> getStores() async {
       "idSucursal": data["idSucursal"],
       "Nombre": data["Nombre"],
       "Imagen": data["Imagen"],
+      "Ubicacion": data["Ubicacion"],
       "uid": doc.id,
     };
     sucursals.add(sucursal);
@@ -41,11 +42,13 @@ Future<String> getStoreId(String storeName) async {
   return store;
 }
 
-Future<bool> addStore(String name, String image, String id) async {
+Future<bool> addStore(
+    String name, String image, String location, String id) async {
   try {
     await firebaseDatabase.collection("Sucursales").doc(id).set({
       "Nombre": name,
       "Imagen": image,
+      "Ubicacion": location,
       "idSucursal": id,
     });
   } catch (e) {
@@ -56,10 +59,11 @@ Future<bool> addStore(String name, String image, String id) async {
 }
 
 Future<void> updateStore(
-    String uid, String name, String image, String id) async {
+    String uid, String name, String image, String location, String id) async {
   await firebaseDatabase.collection("Sucursales").doc(uid).set({
     "Nombre": name,
     "Imagen": image,
+    "Ubicacion": location,
     "idSucursal": id,
   });
 }

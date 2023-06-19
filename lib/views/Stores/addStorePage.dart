@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waske_final_exam/firebase/services/storeService.dart';
+import 'package:examenfinalwask_e/firebase/services/storeService.dart';
 
 class AddStorePage extends StatefulWidget {
   const AddStorePage({Key? key}) : super(key: key);
@@ -11,6 +11,8 @@ class AddStorePage extends StatefulWidget {
 class _AddStorePageState extends State<AddStorePage> {
   TextEditingController store_name_controller = TextEditingController(text: "");
   TextEditingController store_image_controller =
+      TextEditingController(text: "");
+  TextEditingController store_location_controller =
       TextEditingController(text: "");
   TextEditingController store_id_controller = TextEditingController(text: "");
 
@@ -37,6 +39,12 @@ class _AddStorePageState extends State<AddStorePage> {
               ),
             ),
             TextField(
+              controller: store_location_controller,
+              decoration: const InputDecoration(
+                hintText: "Store Location",
+              ),
+            ),
+            TextField(
               controller: store_image_controller,
               decoration: const InputDecoration(
                 hintText: "Store image",
@@ -48,9 +56,11 @@ class _AddStorePageState extends State<AddStorePage> {
                   store_name_controller.text,
                   store_image_controller.text,
                   store_id_controller.text,
+                  store_location_controller.text,
                 ).then((_) {
                   store_name_controller.text = "";
                   store_image_controller.text = "";
+                  store_location_controller.text = "";
                   store_id_controller.text = "";
                   Navigator.pushNamed(context, '/');
                 });

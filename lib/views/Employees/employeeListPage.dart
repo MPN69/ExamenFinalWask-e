@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:waske_final_exam/firebase/services/employeeServices.dart';
-import 'package:waske_final_exam/views/Employees/addEmployeePage.dart';
-import 'package:waske_final_exam/views/Employees/employeeViewPage.dart';
+import 'package:examenfinalwask_e/firebase/services/employeeServices.dart';
+import 'package:examenfinalwask_e/views/Employees/addEmployeePage.dart';
+import 'package:examenfinalwask_e/views/Employees/employeeViewPage.dart';
 
 import '../../widgets/gameCardWidget.dart';
 import '../../widgets/loadingWidget.dart';
@@ -30,85 +30,85 @@ class _EmployeeListPageState extends State<EmployeeListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: FutureBuilder<List<dynamic>>(
-          future: getEmployeeInfo(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const LoadingWidget();
-            } else if (snapshot.hasError) {
-              return const Text('Error al cargar los juegos');
-            } else {
-              final EmployeeList = snapshot.data!;
-              return ListView.builder(
-                itemCount: EmployeeList.length,
-                itemBuilder: (context, index) {
-                  final Employee = EmployeeList[index];
-                  return SizedBox(
-                    height: 200,
-                    child: GestureDetector(
-                      onTap: () async {
-                        final isSigned = await isSignedIn();
-                        if (isSigned) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => EditEmployeePage(
-                                id: Employee["idEmpleado"].toString(),
-                                name: Employee["Nombre"].toString(),
-                                lastName: Employee["Apellido"].toString(),
-                                email: Employee["Correo"].toString(),
-                                image: Employee["Imagen"].toString(),
-                                phone: Employee["Telefono"].toString(),
-                                uid: Employee["uid"].toString(),
-                              ),
+      body: FutureBuilder<List<dynamic>>(
+        future: getEmployeeInfo(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const LoadingWidget();
+          } else if (snapshot.hasError) {
+            return const Text('Error al cargar los empleados');
+          } else {
+            final employeeList = snapshot.data!;
+            return ListView.builder(
+              itemCount: employeeList.length,
+              itemBuilder: (context, index) {
+                final employee = employeeList[index];
+                return SizedBox(
+                  height: 200,
+                  child: GestureDetector(
+                    onTap: () async {
+                      final isSigned = await isSignedIn();
+                      if (isSigned) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditEmployeePage(
+                              id: employee["idEmpleado"].toString(),
+                              name: employee["Nombre"].toString(),
+                              lastName: employee["Apellido"].toString(),
+                              email: employee["Correo"].toString(),
+                              image: employee["Imagen"].toString(),
+                              phone: employee["Telefono"].toString(),
+                              uid: employee["uid"].toString(),
                             ),
-                          );
-                        } else {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => EmployeeViewPage(
-                                employeeName: Employee['Nombre'].toString(),
-                                employeeLastName:
-                                    Employee['Apellido'].toString(),
-                                employeeMail: Employee['Correo'].toString(),
-                                employeePicture: Employee['Imagen'].toString(),
-                                employeePhone: Employee['Telefono'].toString(),
-                              ),
+                          ),
+                        );
+                      } else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EmployeeViewPage(
+                              employeeName: employee['Nombre'].toString(),
+                              employeeLastName: employee['Apellido'].toString(),
+                              employeeMail: employee['Correo'].toString(),
+                              employeePicture: employee['Imagen'].toString(),
+                              employeePhone: employee['Telefono'].toString(),
                             ),
-                          );
-                        }
-                      },
-                      child: GameCardWidget(
-                        gameTitle: Employee["Nombre"],
-                        gameImage: Employee["Imagen"],
-                      ),
+                          ),
+                        );
+                      }
+                    },
+                    child: GameCardWidget(
+                      gameTitle: employee["Nombre"],
+                      gameImage: employee["Imagen"],
                     ),
-                  );
-                },
-              );
-            }
-          },
-        ),
-        floatingActionButton: FutureBuilder<bool>(
-          future: isSignedIn(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData && snapshot.data!) {
-              return FloatingActionButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AddEmployeePage(),
-                    ),
-                  );
-                },
-                child: const Icon(Icons.add),
-              );
-            } else {
-              return const SizedBox.shrink();
-            }
-          },
-        ));
+                  ),
+                );
+              },
+            );
+          }
+        },
+      ),
+      floatingActionButton: FutureBuilder<bool>(
+        future: isSignedIn(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData && snapshot.data!) {
+            return FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AddEmployeePage(),
+                  ),
+                );
+              },
+              child: const Icon(Icons.add),
+            );
+          } else {
+            return const SizedBox.shrink();
+          }
+        },
+      ),
+    );
   }
 }
